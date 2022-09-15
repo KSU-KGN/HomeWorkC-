@@ -3,7 +3,7 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 Console.Write($"Все чётные числа от 1 по {num}: ");
 int sign = 1;
-if (num < 2)
+if (num < 0)
 {
     num = -num;
     sign = -1;
