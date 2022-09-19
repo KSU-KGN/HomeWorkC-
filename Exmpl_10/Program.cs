@@ -1,7 +1,6 @@
 ﻿bool Proverka(int num)
 {
     int count = 0;
-    //int num = number;
 
     while (num >= 1)
     {
