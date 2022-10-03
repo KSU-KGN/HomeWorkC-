@@ -33,7 +33,7 @@ void PrintArray(int[] collection)
     Console.WriteLine($"{collection[index]}]");
 }
 
-int CountPositive(int[] mass, int size)
+int CountEven(int[] mass, int size)
 {
     int count = 0;
     for (int i = 0; i < size; ++i)
@@ -53,5 +53,5 @@ for (int i = 0; i < userCount; ++i)
     myMass[i] = NumToMas(100, 999);
 }
 PrintArray(myMass);
-int res = CountPositive(myMass, userCount);
+int res = CountEven(myMass, userCount);
 Console.WriteLine($"Количество чётных чисел в массиве равно {res}");
