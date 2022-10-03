@@ -30,24 +30,26 @@ void PrintArray(int[] collection)
     int index;
     for (index = 0; index < collection.Length-1; index++)
     {
-        Console.Write($"{collection[index]}, ");
+        Console.Write($"{collection[index]} ");
     }
     Console.WriteLine($"{collection[index]}]");
 }
 
-void IncreasePairs(int[] mass, int size)
+int[] IncreasePairs(int[] mass, int size)
 {
     int res, i;
     int newSize = size / 2;
+    int[] newMass = new int[(size + 1) / 2];
     for (i = 0; i < newSize; ++i)
     {
         res = mass[i] * mass[size - i - 1];
-        Console.Write($"{res} ");
+        newMass[i] = res;
     }
     if (size % 2 != 0)
     {
-        Console.Write(mass[i]);
+        newMass[i] = mass[i];
     }
+    return newMass;
 }
 
 int userCount = StrToInt("Введите размер массива: ");
@@ -57,4 +59,5 @@ for (int i = 0; i < userCount; ++i)
     myMass[i] = NumToMas(1, 10);
 }
 PrintArray(myMass);
-IncreasePairs(myMass, userCount);
+int[] resMass = IncreasePairs(myMass, userCount);
+PrintArray(resMass);
