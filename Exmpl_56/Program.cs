@@ -32,7 +32,7 @@ void PrintColorData(string text)
 void PrintArrayTwo(int[,] collection)
 {
     Console.Write($"\t");
-    for (int i = 0; i < collection.GetLength(1); ++i)
+    for (int i = 1; i <= collection.GetLength(1); ++i)
     {
         PrintColorData($"{i}\t");
     }
@@ -43,7 +43,7 @@ void PrintArrayTwo(int[,] collection)
         {
             if (j == 0)
             {
-                PrintColorData($"{i}\t");
+                PrintColorData($"{collection.GetLength(0) - i}\t");
             }
             Console.Write($"{collection[i, j]}\t");
         }
@@ -97,5 +97,5 @@ for (int i = 0; i < m; ++i)
     }
 }
 PrintArrayTwo(arr);
-int res = MinSum(arr, m, n, size);
+int res = m - MinSum(arr, m, n, size);
 Console.WriteLine($"Номер строки с наименьшей суммой элементов: {res} строка");
